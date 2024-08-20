@@ -14,10 +14,10 @@ describe('Navbar Component', () => {
       </MemoryRouter>
     );
 
-    // click on the Account link
+    // click on the account link
     fireEvent.click(getByText(/Account/i));
 
-    // check if the Account Page is displayed by checking the text content
+    // check if the account page is displayed by checking the text content
     const accountPageText = container.querySelector('div');
     expect(accountPageText && accountPageText.textContent).toContain('lrnr');
   });
@@ -32,10 +32,10 @@ describe('Navbar Component', () => {
       </MemoryRouter>
     );
 
-    // click on the Quiz Generation link
+    // click on the quiz generation link
     fireEvent.click(getByText(/Quiz Generation/i));
 
-    // check if the Quiz Generation Page is displayed by checking the text content
+    // check if the quiz generation page is displayed by checking the text content
     const quizGenPageText = container.querySelector('div');
     expect(quizGenPageText && quizGenPageText.textContent).toContain('lrnr');
   });

@@ -25,7 +25,7 @@ describe('QuizGeneration Component', () => {
 
 describe('QuizGeneration Component - Form Submission', () => {
   test('shows alert if topic or difficulty is not selected on submit', () => {
-    window.alert = jest.fn(); // allows the test to track when and what alert  message is called
+    window.alert = jest.fn(); // allows the test to track when and what alert message is called
     render(<QuizGeneration />);
     
     // click Submit button without selecting topic or difficulty
@@ -34,7 +34,7 @@ describe('QuizGeneration Component - Form Submission', () => {
     // is an alert is shown for missing topic?
     expect(window.alert).toHaveBeenCalledWith('Please select a topic');
     
-    // Fill topic but leave difficulty empty
+    // fill topic but leave difficulty empty
     fireEvent.change(screen.getByLabelText(/Topic/i), { target: { value: 'javascript' } });
     fireEvent.click(screen.getByText(/Submit/i));
   
@@ -74,7 +74,7 @@ describe('QuizGeneration Component', () => {
     //simulate waiting for the quiz to be fetched and rendered
     setTimeout(() => {
     
-      // question is rendered inside <p> tag and should match expected question
+      // question is rendered inside the p tag and should match expected question
       const questionText = container.querySelector('p'); 
       expect(questionText.textContent).toMatch(/Sample question\?/i);
 
