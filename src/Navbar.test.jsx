@@ -14,10 +14,10 @@ describe('Navbar Component', () => {
       </MemoryRouter>
     );
 
-    // Click on the Account link
+    // click on the Account link
     fireEvent.click(getByText(/Account/i));
 
-    // Check if the Account Page is displayed by checking the text content
+    // check if the Account Page is displayed by checking the text content
     const accountPageText = container.querySelector('div');
     expect(accountPageText && accountPageText.textContent).toContain('lrnr');
   });
@@ -32,10 +32,10 @@ describe('Navbar Component', () => {
       </MemoryRouter>
     );
 
-    // Click on the Quiz Generation link
+    // click on the Quiz Generation link
     fireEvent.click(getByText(/Quiz Generation/i));
 
-    // Check if the Quiz Generation Page is displayed by checking the text content
+    // check if the Quiz Generation Page is displayed by checking the text content
     const quizGenPageText = container.querySelector('div');
     expect(quizGenPageText && quizGenPageText.textContent).toContain('lrnr');
   });
@@ -47,13 +47,13 @@ describe('Navbar Component', () => {
       </MemoryRouter>
     );
 
-    // Simulate opening the menu by clicking the toggle button
+    // simulate opening the menu by clicking the toggle button
     fireEvent.click(container.querySelector('#mobile-menu'));
 
-    // Click on the Account link
+    // click on the account link
     fireEvent.click(getByText(/Account/i));
 
-    // Check if the menu is closed (i.e., not active)
+    // check if the menu is closed (i.e., not active)
     const navLinks = container.querySelector('.nav-links');
     expect(navLinks.classList.contains('active')).toBe(false);
   });

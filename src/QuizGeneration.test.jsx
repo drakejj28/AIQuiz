@@ -8,10 +8,10 @@ describe('QuizGeneration Component', () => {
     //the quiz is remdered and extracted from the componets are text or labels
     const { getByText, getByLabelText } = render(<QuizGeneration />);
 
-    // Check if the quiz options are rendered
+    // check if the quiz options are rendered
     expect(getByText(/Quiz Generation Options/i)).toBeTruthy();
 
-    // Check if Submit button is rendered
+    // check if Submit button is rendered
     expect(getByText(/Submit/i)).toBeTruthy();
 
    
@@ -28,7 +28,7 @@ describe('QuizGeneration Component - Form Submission', () => {
     window.alert = jest.fn(); // allows the test to track when and what alert  message is called
     render(<QuizGeneration />);
     
-    // Click Submit button without selecting topic or difficulty
+    // click Submit button without selecting topic or difficulty
     fireEvent.click(screen.getByText(/Submit/i));
     
     // is an alert is shown for missing topic?
@@ -83,7 +83,7 @@ describe('QuizGeneration Component', () => {
       expect(answerInput).not.toBeNull();
       expect(answerInput.placeholder).toMatch(/Type your answer here/i);
 
-      done(); // Signal to Jest that the async test is complete
+      done(); // signal to Jest that the async test is complete
     }, 1000); 
   });
 });
