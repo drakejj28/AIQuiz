@@ -13,4 +13,7 @@ describe('Quiz Generation and Question Navigation', () => {
          
          cy.get('.evaluation', { timeout: 15000 }).should('be.visible').and('contain', 'Verner\'s Evaluation'); 
          cy.get('button').contains('NEXT').click(); 
+
+
+         
          cy.contains('Question').should('be.visible'); }); });
